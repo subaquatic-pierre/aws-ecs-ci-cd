@@ -1,0 +1,31 @@
+version: 0.2
+
+env:
+  variables:
+    NODE_ENV: ${env}
+    REACT_APP_DEV_ENV: ${dev_env}
+    REACT_APP_URI: ${api_uri}
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+  pre_build:
+    commands:
+      - echo Install dependencies website
+      - npm install
+  build:
+    commands:
+      - echo Build website
+      - npm run build
+      - aws s3 rm s3://${bucket_name} --recursive
+      - echo Complete clearing the bucket
+  post_build:
+    commands:
+      - echo Invalidating distribution cache
+      - aws cloudfront create-invalidation --distribution-id ${distribution_id} --paths "/*"
+      - echo Copy build files to bucket
+      - aws s3 cp --recursive build/ s3://${bucket_name}/
+      - echo Completed copying over build files
+
+
