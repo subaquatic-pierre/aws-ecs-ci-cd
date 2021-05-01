@@ -49,7 +49,7 @@ All resource are Created in "us-east-1" region
 terraform.tfvars
 
 ```hcl
-<!-- Comment -->
+# Comment
 build_secrets = {
     DB_NAME:"supersecret"
     DB_USER:"supersecret"
