@@ -36,6 +36,14 @@ Check the [How-to's](#how-to) at the bottom of this repo if you need more help
 1. Ensure all pre-requisites are complete
 2. Rename "terraform.tfvars.example" to "terraform.tfvars"
 3. Enter all variables into the "terraform.vars" file
+4. Run:
+   '''
+   terraform init
+   '''
+5. When prompted end
+   '''
+   yes
+   '''
 
 ### The following resources will be created
 
