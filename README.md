@@ -38,15 +38,11 @@ Check the [How-to's](#how-to) at the bottom of this repo if you need more help
 3. Enter all variables into the "terraform.vars" file
 4. Enter command:
 
-   '''
    terraform init
-   '''
 
 5. When prompted enter:
 
-   '''
    yes
-   '''
 
 ### The following resources will be created
 
