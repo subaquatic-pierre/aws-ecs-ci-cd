@@ -44,11 +44,12 @@ Diagram of resources to cone
 **Note**
 All resource are Created in "us-east-1" region
 
-### Build Secrets Details
+### Terraform Variables Explained
 
 terraform.tfvars
 
 ```hcl
+<!-- Comment -->
 build_secrets = {
     DB_NAME:"supersecret"
     DB_USER:"supersecret"
