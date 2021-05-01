@@ -1,0 +1,85 @@
+# ------
+# General 
+# ------
+tags = {
+  "Name" = "your-app-name",
+  "Project" = "your-project-name"
+  "Environment" = "production"
+}
+
+aws_account_id = "your-account-id"
+github_account = "your-account"
+
+# ------
+# Repositories
+# ------
+api_github_repo = {
+  "url" = "git@github.com:your-account/backend-repo.git",
+  "name" = "your-app-name",
+  "prod_branch" = "main",
+  "staging_branch" = "staging"
+}
+
+frontend_github_repo = {
+  "url" = "git@github.com:your-account/frontend-repo.git",
+  "name" = "your-app-name",
+  "prod_branch" = "main",
+  "staging_branch" = "staging"
+}
+
+# ------
+# ECS 
+# ------
+api_ecr_app_uri = "your-ecr-api-uri"
+
+# ------
+# Domain 
+# ------
+domain_name = "your-domain.com"
+ssl_cert_arn = "your-certificate-arn"
+
+# ------
+# VPC 
+# ------
+vpc_cidr = "10.0.0.0/16"
+
+private_subnet_cidrs = [
+  "10.0.50.0/24",
+  "10.0.51.0/24",
+]
+
+public_subnet_cidrs = [
+  "10.0.0.0/24",
+  "10.0.1.0/24",
+]
+
+availability_zones = [
+  "us-east-1a",
+  "us-east-1b",
+]
+
+# ------
+# Build Secrets
+# ------
+build_secrets = {
+    DB_NAME:"supersecret"
+    DB_USER:"supersecret"
+    DB_PASSWORD:"supersecret"
+    DB_HOST:"supersecret"
+    DB_PORT:"supersecret"
+    SECRET_KEY: "supersecret",
+    EMAIL:"supersecret",
+    DEBUG: "supersecret",
+    ALLOWED_HOSTS: "supersecret",
+    CSRF_TRUSTED_ORIGINS:"supersecret"
+    AWS_MEDIA_BUCKET_NAME: "supersecret",
+    AWS_STORAGE_BUCKET_NAME: "supersecret",
+    AWS_ACCESS_KEY_ID: "supersecret",
+    AWS_SECRET_ACCESS_KEY: "supersecret",
+    DOCKER_USERNAME: "supersecret",
+    DOCKER_PASSWORD: "supersecret"
+    GITHUB_WEBHOOK_SECRET:"supersecret"
+    REACT_APP_URI:"supersecret"
+  }
+
+

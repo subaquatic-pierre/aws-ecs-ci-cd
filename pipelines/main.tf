@@ -9,7 +9,6 @@ module "frontend_pipeline" {
   frontend_cf_distribution = var.frontend_cf_distribution
   tags                     = var.tags
 
-  github_token        = var.github_token
   github_account      = var.github_account
   github_repo         = var.frontend_github_repo
   codestar_connection = aws_codestarconnections_connection.django_react_github_connection.arn
@@ -27,7 +26,6 @@ module "api_pipeline" {
   prefix         = "${var.tags["Name"]}-api"
   tags           = var.tags
 
-  github_token        = var.github_token
   github_account      = var.github_account
   github_repo         = var.api_github_repo
   codestar_connection = aws_codestarconnections_connection.django_react_github_connection.arn

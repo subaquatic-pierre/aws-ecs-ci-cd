@@ -1,6 +1,5 @@
 variable "aws_account_id" {}
 variable "tags" {}
-variable "github_token" {}
 variable "github_account" {}
 variable "api_ecr_repo_url" {}
 variable "frontend_github_repo" {}

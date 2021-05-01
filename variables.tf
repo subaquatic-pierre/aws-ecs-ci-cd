@@ -7,7 +7,6 @@ variable "tags" {
 }
 
 variable "aws_account_id" {}
-variable "github_token" {}
 variable "github_account" {}
 
 # ------

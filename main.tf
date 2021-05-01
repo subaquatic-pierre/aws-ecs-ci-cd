@@ -13,8 +13,8 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "django-react-terraform-backend"
-    key    = "tfstate/django-react-terraform-backend"
+    bucket = "terraform-backend"
+    key    = "tfstate/terraform-backend"
     region = "us-east-1"
   }
 }
@@ -52,7 +52,6 @@ module "pipelines" {
 
   aws_account_id       = var.aws_account_id
   tags                 = var.tags
-  github_token         = var.github_token
   github_account       = var.github_account
   api_ecr_repo_url     = var.api_ecr_app_uri
   frontend_github_repo = var.frontend_github_repo

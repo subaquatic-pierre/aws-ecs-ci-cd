@@ -4,7 +4,6 @@ variable "frontend_site_bucket" {}
 variable "frontend_cf_distribution" {}
 variable "tags" {}
 
-variable "github_token" {}
 variable "github_account" {}
 variable "github_repo" {}
 variable "codestar_connection" {}
