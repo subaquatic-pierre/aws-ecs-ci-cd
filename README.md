@@ -120,7 +120,7 @@ After the certificates are validated, copy the ARN number of the certificate. Th
 
 **Copy the ARN of the certificate**
 
-![Certificate ARN](cfstack/certificate_ARN.png)
+![Certificate ARN](readme/certificate_ARN.png)
 
 ### Terraform Backend Bucket
 
