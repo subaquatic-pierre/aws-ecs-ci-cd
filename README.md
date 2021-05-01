@@ -49,7 +49,69 @@ All resource are Created in "us-east-1" region
 terraform.tfvars
 
 ```hcl
-# Comment
+# ------
+# General
+# ------
+tags = {
+  "Name" = "your-app-name",
+  "Project" = "your-project-name"
+  "Environment" = "production"
+}
+
+aws_account_id = "your-account-id"
+github_account = "your-account"
+
+# ------
+# Repositories
+# ------
+api_github_repo = {
+  "url" = "git@github.com:your-account/backend-repo.git",
+  "name" = "your-app-name",
+  "prod_branch" = "main",
+  "staging_branch" = "staging"
+}
+
+frontend_github_repo = {
+  "url" = "git@github.com:your-account/frontend-repo.git",
+  "name" = "your-app-name",
+  "prod_branch" = "main",
+  "staging_branch" = "staging"
+}
+
+# ------
+# ECS
+# ------
+api_ecr_app_uri = "your-ecr-api-uri"
+
+# ------
+# Domain
+# ------
+domain_name = "your-domain.com"
+ssl_cert_arn = "your-certificate-arn"
+
+# ------
+# VPC
+# ------
+vpc_cidr = "10.0.0.0/16"
+
+private_subnet_cidrs = [
+  "10.0.50.0/24",
+  "10.0.51.0/24",
+]
+
+public_subnet_cidrs = [
+  "10.0.0.0/24",
+  "10.0.1.0/24",
+]
+
+availability_zones = [
+  "us-east-1a",
+  "us-east-1b",
+]
+
+# ------
+# Build Secrets
+# ------
 build_secrets = {
     DB_NAME:"supersecret"
     DB_USER:"supersecret"
