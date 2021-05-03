@@ -196,7 +196,17 @@ After the certificates are validated, copy the ARN number of the certificate. Th
 
 Run the following command:
 
-    aws s3api create-bucket --bucket terraform-backend
+    aws s3api create-bucket --bucket terraform-backend --region us-east-1
+
+Output:
+
+```
+{
+    "Location": "/terraform-backend"
+}
+```
+
+[Reference](https://docs.aws.amazon.com/cli/latest/reference/s3api/create-bucket.html)
 
 ### Terraform CLI
 
@@ -231,4 +241,19 @@ Go to AWS Console, CodeStar connections:
 
 #### AWS ECR repository
 
-Use the following command
+Use the following command:
+
+    aws ecr create-repository --repository-name django-graphql-api
+
+Output:
+
+```
+{
+    "repository": {
+        "registryId": "123456789012",
+        "repositoryName": "sample-repo",
+        "repositoryArn": "arn:aws:ecr:us-west-2:123456789012:repository/project-a/nginx-web-app"
+    }
+}
+
+```
