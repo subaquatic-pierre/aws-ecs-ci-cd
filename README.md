@@ -200,6 +200,10 @@ Run the following command:
 
 ### Terraform CLI
 
+Follow the link below for instructions:
+
+[Install Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli)
+
 ### Front-end GitHub Repo
 
 Clone this repo if you don't already have a Gatsby site
