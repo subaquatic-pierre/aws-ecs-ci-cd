@@ -225,6 +225,9 @@ Go to AWS Console, CodeStar connections:
 1. Click "Create connection"
 2. Select Provider "GitHub"
 3. Enter connection name "github-connection"
+4. Click "Install a new app"
+5. Follow GitHub prompts, allow all repository access, click "Save"
+6. Click "Connect"
 
 #### AWS ECR repository
 
