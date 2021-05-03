@@ -6,14 +6,14 @@ The infrastructure in this project is designed using Hashicorp language and impl
 
 ### Main Features
 
-- :star: Decoupled front and backend-ends
-- :star: Front Application served worldwide CDN with AWS CloudFront
-- :star: Resilient and Highly available back-end API with Autoscalling and network load balancing
+- :star: Decoupled frontend and backend
+- :star: Frontend Application cached worldwide with AWS CloudFront for excellent performance
+- :star: Resilient and Highly available backend API with Autoscalling and network load balancing
 - :star: Secure connection with SSL certificate on AWS Route 53
 - :star: Redirect all http://www.domain.com traffic to https://domain.com
 - :star: AWS CodePipeline which automates application deployment
 - :star: Secure VPC
-- :star: Secure application logs for high visibility into application, including Athena ALB logs
+- :star: Secure application logs for high visibility, including Athena ALB logs
 
 ### Pre-requisites (if not follow the how to's):
 
@@ -25,6 +25,7 @@ The infrastructure in this project is designed using Hashicorp language and impl
 - :warning: Back-end GraphQL API GitHub repo
 - :warning: AWS CodeStar connection
 - :warning: AWS ECR repository
+- :warning: Postgres Database
 
 **Note**
 Check the [How-to's](#how-to) at the bottom of this repo if you need more help
@@ -63,6 +64,7 @@ tags = {
   "Name" = "your-app-name",
   "Project" = "your-project-name"
   "Environment" = "production"
+  "Athena_Name" = "your_project"
 }
 
 aws_account_id = "your-account-id"
@@ -87,8 +89,10 @@ frontend_github_repo = {
 
 # ------
 # ECS
+# Copy URI from CLI command to create image repo
 # ------
 api_ecr_app_uri = "your-ecr-api-uri"
+# eg. 0000000000.dkr.ecr.us-east-1.amazonaws.com/your-app-api
 
 # ------
 # Domain
@@ -139,6 +143,34 @@ build_secrets = {
     GITHUB_WEBHOOK_SECRET:"supersecret"
     REACT_APP_URI:"supersecret"
   }
+
+# ------
+# Build Secrets Examples
+# ------
+build_secrets = {
+    # Django settings
+    DB_NAME:"my-app-db"
+    DB_USER:"postgres"
+    DB_PASSWORD:"supersecret"
+    DB_HOST:"yourappdb.acountid.us-east-1.rds.amazonaws.com"
+    DB_PORT:"5432"
+    SECRET_KEY: "supersecret",
+    EMAIL:"admin@app.com",
+    DEBUG: "False",
+    ALLOWED_HOSTS: "your-domain.com,api.your-domain.com,.your-domain.com",
+    CSRF_TRUSTED_ORIGINS:"your-domain.com,api.your-domain.com,.your-domain.com"
+    AWS_MEDIA_BUCKET_NAME: "supersecret",
+    AWS_STORAGE_BUCKET_NAME: "supersecret",
+
+    # Credentials are found under "My Security Credentials" in AWS console, see instructions below
+    AWS_ACCESS_KEY_ID: "supersecret",
+    AWS_SECRET_ACCESS_KEY: "supersecret",
+
+    DOCKER_USERNAME: "supersecret",
+    DOCKER_PASSWORD: "supersecret"
+    REACT_APP_URI:"supersecret"
+    CODESTAR_ARN: "supersecret"
+  }
 ```
 
 ---
@@ -153,6 +185,8 @@ build_secrets = {
 - [GitHub repository which contains a Django GraphQL application](#back-end-github-repo)
 - [AWS CodeStar connection](#aws-codestar)
 - [AWS ECR repository](#aws-ecr-repository)
+- [AWS Access Key Credentials](aws-access-jey-credentials)
+- [Create AWS RDS Postgres DB](#create-aws-rds-postgres-db)
 
 ### Route 53
 
@@ -214,13 +248,13 @@ Follow the link below for instructions:
 
 [Install Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli)
 
-### Front-end GitHub Repo
+### Frontend GitHub Repo
 
-Clone this repo if you don't already have a Gatsby site:
+Clone this repo if you don't already have a ReactJS application:
 
     git clone git@github.com:subaquatic-pierre/react-apollo.git
 
-### Back-end GitHub Repo
+### Backend GitHub Repo
 
 Clone this repo if you don't already have a back-end GraphQL API application
 
@@ -238,7 +272,7 @@ Go to AWS Console, CodeStar connections:
 4. Click "Install a new app"
 5. Follow GitHub prompts, allow all repository access, click "Save"
 6. Click "Connect"
-7. Copy ARN, paste in "terraform.tfvars" under "build_secrets"
+7. Copy ARN, paste in "terraform.tfvars" under "build_secrets" -> "CODESTAR_ARN"
 
 #### AWS ECR repository
 
@@ -268,3 +302,15 @@ Output:
 ```
 
 Copy "repositoryUri" value, paste the ARN in "variables.tfvars" under "api_ecr_app_uri"
+
+#### AWS Access Key Credentials
+
+Follow the link below for more instructions:
+
+[AWS Access Key Credentials](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html)
+
+#### Create AWS RDS Postgres DB
+
+Follow the link below for more instructions:
+
+[Create Postgres Database](https://aws.amazon.com/getting-started/hands-on/create-connect-postgresql-db/)

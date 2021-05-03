@@ -78,7 +78,6 @@ build_secrets = {
     AWS_SECRET_ACCESS_KEY: "supersecret",
     DOCKER_USERNAME: "supersecret",
     DOCKER_PASSWORD: "supersecret"
-    GITHUB_WEBHOOK_SECRET:"supersecret"
     REACT_APP_URI:"supersecret"
     CODESTAR_ARN: "supersecret"
   }
