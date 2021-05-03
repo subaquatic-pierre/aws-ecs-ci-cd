@@ -260,7 +260,7 @@ Clone this repo if you don't already have a back-end GraphQL API application
 
     git clone git@github.com:subaquatic-pierre/django-graphql.git
 
-#### AWS CodeStar
+### AWS CodeStar
 
 Go to AWS Console, CodeStar connections:
 
@@ -274,7 +274,7 @@ Go to AWS Console, CodeStar connections:
 6. Click "Connect"
 7. Copy ARN, paste in "terraform.tfvars" under "build_secrets" -> "CODESTAR_ARN"
 
-#### AWS ECR repository
+### AWS ECR repository
 
 Use the following command:
 
@@ -303,13 +303,13 @@ Output:
 
 Copy "repositoryUri" value, paste the ARN in "variables.tfvars" under "api_ecr_app_uri"
 
-#### AWS Access Key Credentials
+### AWS Access Key Credentials
 
 Follow the link below for more instructions:
 
 [AWS Access Key Credentials](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html)
 
-#### Create AWS RDS Postgres DB
+### Create AWS RDS Postgres DB
 
 Follow the link below for more instructions:
 
