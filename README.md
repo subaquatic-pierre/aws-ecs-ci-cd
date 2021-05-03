@@ -206,19 +206,25 @@ Follow the link below for instructions:
 
 ### Front-end GitHub Repo
 
-Clone this repo if you don't already have a Gatsby site
+Clone this repo if you don't already have a Gatsby site:
 
-    git clone git@github.com:subaquatic-pierre/gatsby-pipeline-app.git
+    git clone git@github.com:subaquatic-pierre/react-apollo.git
 
 ### Back-end GitHub Repo
 
-Clone this repo if you don't already have a Gatsby site
+Clone this repo if you don't already have a back-end GraphQL API application
 
-    git clone git@github.com:subaquatic-pierre/gatsby-pipeline-app.git
+    git clone git@github.com:subaquatic-pierre/django-graphql.git
 
 #### AWS CodeStar
 
-Go to AWS Console
+Go to AWS Console, CodeStar connections:
+
+[CodeStar Connections](https://console.aws.amazon.com/codesuite/settings/connections)
+
+1. Click "Create connection"
+2. Select Provider "GitHub"
+3. Enter connection name "github-connection"
 
 #### AWS ECR repository
 
