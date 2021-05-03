@@ -121,30 +121,6 @@ availability_zones = [
 ]
 
 # ------
-# Build Secrets
-# ------
-build_secrets = {
-    DB_NAME:"supersecret"
-    DB_USER:"supersecret"
-    DB_PASSWORD:"supersecret"
-    DB_HOST:"supersecret"
-    DB_PORT:"supersecret"
-    SECRET_KEY: "supersecret",
-    EMAIL:"supersecret",
-    DEBUG: "supersecret",
-    ALLOWED_HOSTS: "supersecret",
-    CSRF_TRUSTED_ORIGINS:"supersecret"
-    AWS_MEDIA_BUCKET_NAME: "supersecret",
-    AWS_STORAGE_BUCKET_NAME: "supersecret",
-    AWS_ACCESS_KEY_ID: "supersecret",
-    AWS_SECRET_ACCESS_KEY: "supersecret",
-    DOCKER_USERNAME: "supersecret",
-    DOCKER_PASSWORD: "supersecret"
-    GITHUB_WEBHOOK_SECRET:"supersecret"
-    REACT_APP_URI:"supersecret"
-  }
-
-# ------
 # Build Secrets Examples
 # ------
 build_secrets = {
