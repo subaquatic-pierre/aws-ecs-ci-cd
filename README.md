@@ -238,6 +238,7 @@ Go to AWS Console, CodeStar connections:
 4. Click "Install a new app"
 5. Follow GitHub prompts, allow all repository access, click "Save"
 6. Click "Connect"
+7. Copy ARN, paste in "terraform.tfvars" under "build_secrets"
 
 #### AWS ECR repository
 

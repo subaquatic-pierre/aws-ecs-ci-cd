@@ -80,6 +80,7 @@ build_secrets = {
     DOCKER_PASSWORD: "supersecret"
     GITHUB_WEBHOOK_SECRET:"supersecret"
     REACT_APP_URI:"supersecret"
+    CODESTAR_ARN: "supersecret"
   }
 
 
