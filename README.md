@@ -2,7 +2,7 @@
 
 ## Overview
 
-The infrastructure in this project is designed using Hashicorp language and implemented with Terraform CLI. It supports a a decoupled back-end and front-end application architecture. Both application have separate pipelines which pull from different GitHub repos, this allows development of each layer to operate independently. Both pipelines are triggered by a git push to the main repo. The backend API is designed to support a GraphQL API hosted on AWS ECS and is network balanced by an Auto scalling group and Application load balancer. The front-end application is build in the pipeline and hosted on an S3 bucket and AWS CloudFront.
+The infrastructure in this project is designed using Hashicorp language and implemented with Terraform CLI. It supports a decoupled backend and frontend application architecture. Both applications have separate pipelines which pull from different GitHub repos, this allows development of each layer to operate independently. Both pipelines are triggered by a push to the main repo. The backend API is designed to support a GraphQL API hosted on AWS ECS and is network balanced by an Auto scalling group and Application load balancer. The frontend application is built in the pipeline and hosted on an S3 bucket and AWS CloudFront.
 
 ### Main Features
 
@@ -51,6 +51,16 @@ Diagram of resources to cone
 
 **Note**
 All resource are Created in "us-east-1" region
+
+### Important Files
+
+- pipelines/api/buildspec
+
+  Testing commands can be added to this file before building the docker image
+
+- pipelines/frontend/buildspec
+
+  Testing commands can be added to this file before deploying to the S3 bucket
 
 ### Terraform Variables Explained
 

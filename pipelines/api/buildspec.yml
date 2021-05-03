@@ -11,6 +11,7 @@ phases:
       - echo Build started on `date`
       - echo Building the application Docker image...
       - docker login --username=${DOCKER_USERNAME} --password=${DOCKER_PASSWORD}
+      # TESTING COMMANDS ADDED HERE
       - |
         docker build -t ${REPOSITORY_URI}:latest . \
           --build-arg DB_NAME=${DB_NAME} \
