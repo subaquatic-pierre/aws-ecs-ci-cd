@@ -252,8 +252,9 @@ Output:
     "repository": {
         "registryId": "123456789012",
         "repositoryName": "sample-repo",
-        "repositoryArn": "arn:aws:ecr:us-west-2:123456789012:repository/project-a/nginx-web-app"
+        "repositoryArn": "arn:aws:ecr:us-west-2:123456789012:repository/project-ci-cd/nginx-web-app"
     }
 }
-
 ```
+
+Copy "RepositoryARN", paste ARN in "variables.tfvars"
