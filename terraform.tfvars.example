@@ -5,6 +5,7 @@ tags = {
   "Name" = "your-app-name",
   "Project" = "your-project-name"
   "Environment" = "production"
+  "Athena_Name" = "some_name"
 }
 
 aws_account_id = "your-account-id"
